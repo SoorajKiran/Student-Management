@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Profile-Edit{% endblock %}
+{% block content %}
+<h2 class="text-center">Profile-Edit</h2>
+<form action="" method="POST" class="container">
+    {% for message in messages %}
+    <h5 class="text-center text-danger">{{message}}</h5>
+    {% endfor %}
+    {% csrf_token %}
+    {% for i in forms %}
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Name</span>
+        <input type="text" aria-label="First name" class="form-control" name="name" placeholder="{{i.name}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Email</span>
+        <input type="text" aria-label="First name" class="form-control" name="email" placeholder="{{i.email}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Phone no</span>
+        <input type="text" aria-label="First name" class="form-control" name="phno" placeholder="{{i.phno}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Password</span>
+        <input type="text" aria-label="First name" class="form-control" name="password" placeholder="{{i.password}}">
+    </div>
+    <div class="d-flex justify-content-center">
+        <input type="submit" value="Edit" class="btn btn-dark w-25">
+    </div>
+    {% endfor %}
+    {% endblock %}

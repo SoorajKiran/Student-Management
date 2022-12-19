@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body>
+        
+    
+
+        
+        <nav class="navbar navbar-dark bg-white">
+            <div class="container text-center">
+                <h1 style="text-align:center;font-family:Verdana;padding:10px"> S K COLLEGE OF ENGINEERING </h1>
+            </div>
+              
+          </nav>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary py-3 "> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">   
+                <a class="nav-link" href="{% url 'mainhome' %}">Home</a>      
+              </div>
+            </div>
+          </nav>
+          {% block content %}{% endblock %}

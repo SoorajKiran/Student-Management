@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Student Details{% endblock %}
+
+{% block content %}
+<div class="container mt-2 text-center">
+    <h1 class="text-center">Student Details</h1>
+</div>
+<hr>
+<div class="container text-center" >
+<table class="table bg-dark text-white text-center w-100" style="border:1px solid black;">
+    <thead>
+        <tr> 
+            <th scope="col">Student Name</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Place</th>
+        </tr>
+    </thead>
+    {% for i in form %}
+    <tbody>
+        <tr>
+            <td>{{i.stud_name}}</td>
+            <td>{{i.stud_email}}</td>
+            <td>{{i.stud_phone}}</td>
+            <td>{{i.stud_address}}</td>
+            <td>{{i.stud_place}}</td>
+            <td><a href="{% url 'studentedit' %}?edit={{i.student_id}}" class="btn text-light btn-outline-secondary">Edit</a></td>
+            <td><a href="{% url 'delete' %}?delete={{i.student_id}}" class="btn text-light btn-outline-secondary">Delete</a></td>
+            
+
+            
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

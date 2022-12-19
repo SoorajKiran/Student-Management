@@ -1,0 +1,45 @@
+{% extends 'mainbase.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+{%if out == 1%}
+<div class="alert alert-success container text-center col-6 p-10" role="alert">
+    Hi {{name}},we will contact you soon.
+</div>
+{% endif %}
+<div style="float:left;padding:20px;margin:20px;">
+    <h1>Contact Us</h1><br>
+    <p>Call: 9898989898</p>
+    <p>Email:info@skedu.com</p>
+    <p>Connect us on:</p>
+    <div>
+        <a href="#"><img style="padding:5px;width:35px;height:35px" src="{% static '/images/insta.jpg' %}"></a>
+        <a href="#"><img style="padding:5px;width:35px;height:35px" src="{% static '/images/fb.jpg' %}"></a>
+        <a href="#"><img style="padding:5px;width:35px;height:35px" src="{% static '/images/twitter.jpg' %}"></a>
+        <a href="#"><img style="padding:5px;width:35px;height:35px" src="{% static '/images/linkedin.jpg' %}"></a>
+    </div>
+    
+</div>
+<div style="margin:20px;margin-left:75vh;padding:30px;">
+    <h3>How can we be of assistance ?</h3>
+    <br>
+    <h6>Complete this Enquiry Form to obtain additional information about our services or send personal complaints. We will analyze your enquiry and return to you shortly by email or phone.</h6>
+    <form action="" method="POST" style="padding:30px;">
+        {% csrf_token %}
+        <label for="name" style="padding:10px;">Name:</label>
+        <input style="margin-left:12vh;" type="text" placeholder="Enter name" id="name" name="name" required><br>
+
+        <label for="email" style="padding:10px;">Email:</label>
+        <input style="margin-left:13vh;" type="text" placeholder="Enter email" id="email" name="email" required><br>
+
+        <label for="phno" style="padding:10px;">Mobile number:</label>
+        <input type="number" placeholder="Mob no" id="phno" name="phno" required><br>
+
+        <button  style="float:right;margin-right:77vh;background:black;color:white;padding:5px;" type="submit">Submit</button>
+
+
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Student-Edit{% endblock %}
+{% block content %}
+<h2 class="text-center">Student-Edit</h2>
+<form action="" method="POST" class="container">
+    {% csrf_token %}
+    {% for i in forms %}
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Student Name</span>
+        <input type="text" aria-label="First name" class="form-control" name="stud_name" placeholder="{{i.stud_name}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Student Email</span>
+        <input type="text" aria-label="First name" class="form-control" name="stud_email" placeholder="{{i.stud_email}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Student Phone no</span>
+        <input type="text" aria-label="First name" class="form-control" name="stud_phone" placeholder="{{i.stud_phone}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Student Address</span>
+        <input type="text" aria-label="First name" class="form-control" name="stud_address" placeholder="{{i.stud_address}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Student Place</span>
+        <input type="text" aria-label="First name" class="form-control" name="stud_place" placeholder="{{i.stud_place}}">
+    </div>
+    <div class="d-flex justify-content-center p-3">
+        <input type="submit" value="Edit" class="btn btn-dark w-25 ">
+    </div>
+    {% endfor %}
+    {% endblock %}

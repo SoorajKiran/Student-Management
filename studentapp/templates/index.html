@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'loginbase.html' %}
+{% load static %}
+{% block title %}Sign in{% endblock %}
+
+
+
+{% block content %}
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body style="background:#ADD8E6">
+
+        <div style="border:solid 2px black;background:white;margin:10vh;margin-right:80vh;margin-left:80vh;">
+            <div style="text-align:center;padding:50px;">
+                 
+                     <a style=" width:10px;length:20px;background:blue;padding:20px;color:white;text-decoration:none;" href="{% url 'signup' %}">Sign Up</a>
+                     <a style=" width:10px;length:20px;background:blue;padding:20px;color:white;text-decoration:none;" href="{% url 'login' %}">Sign In</a> <br>
+                     <h3 style="margin-top:30px;"><b>Sign In</b></h3>
+                     
+                <form method="POST"> 
+                    {% csrf_token %} 
+                    <div>{% for message in messages %}
+                        <h3 style="color:red;">{{message}}</h3>
+                        {% endfor %}</div>
+
+                    <div style="padding:10px;">
+                          
+                        <input style="border:solid 2px black;width:40vh" type="email" placeholder="Enter Email" name="email" required>  
+                    </div>
+                    <div style="padding:10px;">                       
+                        <input style="border:solid 2px black;width:40vh" type="password" placeholder="Enter Password" name="password" onchange="checkpass()" required> 
+                    </div>
+                    <div>
+                        <button style="margin-top:10px;background:blue;padding:5px;color:white;width:40vh;" type="submit">Login</button>     
+                        <br>
+                        <br>
+                        <p>Forgot <a style= "text-decoration:none;color:black;" href="{% url 'forgot' %}">password ?</a></p>
+                    </div>
+                </form>     
+            </div>
+        </div>
+
+        <script src="" async defer></script>
+    </body>
+</html>
+{% endblock %}

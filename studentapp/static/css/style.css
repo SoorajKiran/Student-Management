@@ -1,0 +1,11 @@
+.error{
+    border:solid red !important;
+}
+
+.success{
+    border: solid green !important;
+}
+.px p{
+    text-align: center;
+    color:red;
+}

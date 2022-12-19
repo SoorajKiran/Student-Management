@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Staff Details{% endblock %}
+{% block content %}
+<h1 class="container text-center mt-3">Staff Details</h1>
+<hr>
+<div class="container text-center" >
+<table class="table bg-dark table-striped text-white text-center" style="border:1px solid black;">
+    <tr>
+        <th>Name</th>
+        <th>Email id</th>
+        <th>Mobile no</th>
+    </tr>
+    {% for i in form %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phno}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

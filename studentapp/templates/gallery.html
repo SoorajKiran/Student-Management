@@ -1,0 +1,33 @@
+{% extends 'mainbase.html' %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+
+<div style="display: flex;justify-content: center;padding:20px;">
+    <img style="border:2px solid black" src="{% static '/images/degree.jpg' %}" class="d-block w-75 center " height="450" alt="...">
+</div>
+
+<div style="display: flex;justify-content: center;padding:20px;">
+    <img style="border:2px solid black" src="{% static '/images/lecture.jpg' %}" class="d-block w-75 center " height="450" alt="...">
+</div>
+
+<div style="display: flex;justify-content: center;padding:20px;">
+    <img style="border:2px solid black" src="{% static '/images/library.jpg' %}" class="d-block w-75 center " height="450" alt="...">
+</div>
+
+<div style="display: flex;justify-content: center;padding:20px;">
+    <img style="border:2px solid black" src="{% static '/images/rugby.jpg' %}" class="d-block w-75 center " height="450" alt="...">
+</div>
+
+<div style="display: flex;justify-content: center;padding:20px;">
+    <img style="border:2px solid black" src="{% static '/images/hall.jpg' %}" class="d-block w-75 center " height="450" alt="...">
+</div>
+
+<div style="display: flex;justify-content: center;padding:20px;">
+    <img style="border:2px solid black" src="{% static '/images/lab.jpg' %}" class="d-block w-75 center " height="450" alt="...">
+</div>
+
+
+ {% endblock %}
